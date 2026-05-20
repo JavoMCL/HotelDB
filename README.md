@@ -1,95 +1,113 @@
-# Sistema de Base de Datos para Gestión de Proveedores (Hotel)
+# Supplier Management Database System (Hotel)
 
-## Descripción
-Este proyecto consiste en el **diseño e implementación de una base de datos relacional en MySQL** orientada a la gestión del módulo de **compras a proveedores** dentro de un hotel.
+> **Note:** This project is entirely in Spanish because it was developed as a university project. Database objects, table names, procedures, triggers, and queries are written in Spanish.
 
-Incluye la estructura completa del sistema, junto con **lógica de negocio** implementada directamente en la base de datos mediante **procedimientos almacenados**, **triggers**, **vistas** y **consultas**.
+## Description
 
-> Este proyecto está enfocado en la **capa de datos** (no incluye frontend ni API).
+This project consists of the **design and implementation of a relational database in MySQL** focused on managing the **supplier purchasing module** within a hotel environment.
 
----
+It includes the complete system structure along with **business logic** implemented directly in the database using **stored procedures**, **triggers**, **views**, and **SQL queries**.
 
-## Objetivos
-- Modelar correctamente un sistema real de compras.
-- Garantizar integridad de datos mediante claves y restricciones.
-- Automatizar procesos con lógica en base de datos.
-- Optimizar consultas frecuentes mediante vistas.
+> This project focuses exclusively on the **data layer** (no frontend or API included).
 
 ---
 
-## Estructura del Proyecto
+## Objectives
+
+- Properly model a real-world purchasing system.
+- Ensure data integrity through keys and constraints.
+- Automate processes using database-level logic.
+- Optimize common queries through views.
+
+---
+
+## Project Structure
+
 ```text
 HotelDB/
 │
-├── Hotel.sql              # Script principal (estructura + datos)
-├── Consultas.sql          # Consultas SQL relevantes
-├── Vistas.sql             # Definición de vistas
+├── Hotel.sql              # Main script (schema + sample data)
+├── Consultas.sql          # Relevant SQL queries
+├── Vistas.sql             # View definitions
 ├── Procedimientos.sql     # Stored Procedures
-├── Triggers.sql           # Triggers
-└── DiagramaER.mwb         # Modelo entidad-relación (MySQL Workbench)
+├── Triggers.sql           # Database Triggers
+└── DiagramaER.mwb         # Entity-Relationship model (MySQL Workbench)
 ```
 
 ---
 
-## Modelo de Datos
-El sistema incluye entidades clave como:
-- Depósitos
-- Productos
-- Proveedores
-- Cotizaciones
-- Órdenes de compra
-- Detalles de órdenes
+## Data Model
 
-Relaciones diseñadas para representar un flujo real de compras:
+The system includes key entities such as:
 
-**Proveedor → Cotización → Orden de Compra → Detalle → Depósito**
+- Warehouses
+- Products
+- Suppliers
+- Quotations
+- Purchase Orders
+- Order Details
+
+Relationships were designed to represent a real purchasing workflow:
+
+```text
+Supplier → Quotation → Purchase Order → Detail → Warehouse
+```
 
 ---
 
-## Funcionalidades Implementadas
+## Implemented Features
 
-### Procedimientos almacenados
-- Gestión de órdenes de compra.
-- Inserción controlada de datos.
-- Automatización de procesos repetitivos.
+### Stored Procedures
+
+- Purchase order management
+- Controlled data insertion
+- Repetitive process automation
 
 ### Triggers
-- Validaciones automáticas.
-- Control de integridad.
-- Acciones ante inserciones/modificaciones.
 
-### Vistas
-- Simplificación de consultas complejas.
-- Reportes listos para consumo.
+- Automatic validations
+- Integrity control
+- Actions on inserts and updates
 
-### Consultas
-- Ejemplos de uso del sistema.
-- Reportes útiles para análisis.
+### Views
 
----
+- Simplification of complex queries
+- Ready-to-use reports
 
-## Cómo usar
+### Queries
 
-1. Abrir **MySQL Workbench** (o cualquier cliente MySQL).
-2. Ejecutar el script principal:
-   ```sql
-   SOURCE Hotel.sql;
-   ```
-3. Luego ejecutar opcionalmente:
-   ```sql
-   SOURCE Vistas.sql;
-   SOURCE Procedimientos.sql;
-   SOURCE Triggers.sql;
-   SOURCE Consultas.sql;
-   ```
+- System usage examples
+- Useful reports for analysis
 
 ---
 
-## Tecnologías
+## How to Use
+
+1. Open **MySQL Workbench** (or any MySQL client).
+2. Run the main script:
+
+```sql
+SOURCE Hotel.sql;
+```
+
+3. Then optionally run:
+
+```sql
+SOURCE Vistas.sql;
+SOURCE Procedimientos.sql;
+SOURCE Triggers.sql;
+SOURCE Consultas.sql;
+```
+
+---
+
+## Technologies
+
 - MySQL 8.x
 - MySQL Workbench
 
 ---
 
-## Nota
-Este proyecto fue desarrollado con fines educativos, simulando un entorno real de gestión hotelera.
+## Notes
+
+This project was developed for educational purposes, simulating a real hotel purchasing management environment.
